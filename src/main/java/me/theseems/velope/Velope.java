@@ -21,7 +21,6 @@ import com.velocitypowered.api.proxy.server.RegisteredServer;
 import com.velocitypowered.api.proxy.server.ServerInfo;
 import com.velocitypowered.api.proxy.server.ServerPing;
 import com.velocitypowered.api.scheduler.ScheduledTask;
-import me.theseems.velope.commands.LobbyCommand;
 import me.theseems.velope.commands.StatusCommand;
 import me.theseems.velope.commands.VelopeCommand;
 import me.theseems.velope.config.code.AdventureConfig;
@@ -126,11 +125,6 @@ public class Velope {
 
         // Register commands
         CommandManager manager = proxyServer.getCommandManager();
-        manager.register(
-                manager.metaBuilder("lobby")
-                        .aliases("leave", "back")
-                        .build(),
-                injector.getInstance(LobbyCommand.class));
         manager.register(
                 manager.metaBuilder("velope").build(),
                 injector.getInstance(VelopeCommand.class));
